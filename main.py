@@ -51,7 +51,10 @@ class ThreadForPlayer(QThread):
             pygame_sound = pygame.mixer.Sound(path)
             pygame_sound.play()
         else:
-            self._wav_player.set_device(device)
+            if device:
+                self._wav_player.set_device(device)
+            else:
+                self._wav_player.remove_device()
             self._wav_player.play(sound_name)
         self._finish_time = time.time() + sound.duration + 0.1
         self.sound_played.emit(sound_name)
