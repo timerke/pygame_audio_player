@@ -1,4 +1,4 @@
-epsound
+git+https://github.com/epc-msu/epsound#egg=epsound
 pygame
 PyQt5==5.15.0
 PyQt5-sip==12.8.1
